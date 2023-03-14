@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function load(form) {
+
+            var word = document.getElementById("word").value;
+
+            if (word == "") {
+                    document.getElementById("msg").innerHTML = `Enter Some Input`;
+            }
+            
+            async function load() {
+
+                let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+                
+                let data = await (await fetch(url)).json();
+                console.log(data);
+
+                if (data.title = "") {
+                    document.getElementById("msg").innerHTML = `No definition found for ${word}`;
+                }
+                else {
+                    let meanings = data[0].meanings;
+                    let message = `The meaning of ${word} is :`;
+
+                    for (let i = 0; i < meanings.length; i++) {
+
+                        let definition = meanings[i].definitions[0].definition;
+                        message += ` ${definition}`;
+                    
+                    }
+
+                    document.getElementById("msg").innerHTML = message;
+                }
+            }
+            load(word);
+        }
+    </script>
+    <div class="container">
+    
+        <div class="Search_Bar">
+
+            <img src="/image/Google__G__Logo.svg" class="GoogleIcon" alt="Search">
+        
+            <input type="text" id="word" name="word" placeholder="Search Here">
+            
+            <img src="/image/right-arrow.png" class="Submit" alt="Submit" onclick="load(this.form); return false">
+
+        </div>
+
+        <div class="data">
+            <p id="msg"></p>
+        </div>
+    </div>
+</body>
+</html>

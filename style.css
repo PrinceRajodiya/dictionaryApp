@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    background-color: rgb(230, 245, 242);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Search_Bar {
+    padding: 20px;
+    border-radius: 55px;
+    width: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 245, 242);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(210, 228, 226, 0.7)
+}
+
+input {
+    background: transparent;
+    outline: none;
+    border: 0;
+    font-size: 20px;
+}
+
+.GoogleIcon {
+    padding-right: 11px;
+    height: 40px;
+    width: 40px;
+}
+
+.Submit {
+    height: 20px;
+    width: 20px;
+}
+
+.data {
+    border-radius: 35px;
+    width: auto;
+    max-width: 800px;
+    height: auto;
+    max-height: 200px;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 245, 242);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(210, 228, 226, 0.7)
+}
